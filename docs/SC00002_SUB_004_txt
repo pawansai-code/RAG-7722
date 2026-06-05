@@ -1,0 +1,30 @@
+Sub-Problem ID: SC00002_SUB_004
+Statement:
+Project Name: Bill Processing System
+Sub-Problem: Calculate GST on individual bill items
+
+Top Matching Schema Components:
+----------------------------------------
+Match 1: (ID: exported_groq_data.csv_106) - Cosine Similarity: 0.8241 (Raw Distance: 0.3519)
+id: GSTAccBill_I_PValue_106\ndocument: Schema Name: GSTAccBill_I
+        Component Name: PValue
+        Component Type: MATH
+        Business Purpose: This row calculates the GST (Goods and Services Tax) cost as a percentage of the bill base value, using a parameter named 'Parameter1'.
+        Technical Logic: The component 'PValue' in the 'GSTAccBill_I' schema uses a mathematical expression to calculate the GST cost, which is then used in the model 'MATH'. The expression '(BillBaseValue * Parameter1)/100' multiplies the bill base value by the parameter value and divides the result by 100 to get the GST cost.\ncomponent_name: PValue\nschema_name: GSTAccBill_I
+----------------------------------------
+
+Match 2: (ID: exported_groq_data.csv_114) - Cosine Similarity: 0.8196 (Raw Distance: 0.3609)
+id: ExpAccBill_I_GST_NValue_114\ndocument: Schema Name: ExpAccBill_I_GST
+        Component Name: NValue
+        Component Type: MATH
+        Business Purpose: This row calculates the GST (Goods and Services Tax) cost by subtracting 1% of the BillBaseValue multiplied by Parameter1.
+        Technical Logic: The component_expr '-(BillBaseValue * Parameter1)/100' is a mathematical expression that calculates the GST cost. It multiplies the BillBaseValue by Parameter1, then subtracts 1% of the result, effectively calculating the GST cost.\ncomponent_name: NValue\nschema_name: ExpAccBill_I_GST
+----------------------------------------
+
+Match 3: (ID: enriched_exported_groq_data.csv_106) - Cosine Similarity: 0.8077 (Raw Distance: 0.3846)
+id: GSTAccBill_I_PValue_106\ndocument: Schema Name: GSTAccBill_I
+        Component Name: PValue
+        Component Type: MATH
+        Business Purpose: This row calculates the GST (Goods and Services Tax) cost as a percentage of the bill base value, using a parameter named 'Parameter1'.
+        Technical Logic: The component 'PValue' in the 'GSTAccBill_I' schema uses a mathematical expression to calculate the GST cost, which is then used in the model 'MATH'. The expression '(BillBaseValue * Parameter1)/100' multiplies the bill base value by the parameter value and divides the result by 100 to get the GST cost.\ncomponent_name: PValue\nschema_name: GSTAccBill_I\npurpose: This row calculates the GST (Goods and Services Tax) cost as a percentage of the bill base value.\ntechnical_logic: The component 'PValue' in the 'GSTAccBill_I' schema uses a mathematical expression to calculate the GST cost, multiplying the bill base value by the parameter value and dividing the result by 100.
+----------------------------------------

@@ -1,0 +1,26 @@
+Sub-Problem ID: SC00002_SUB_005
+Statement:
+Project Name: Bill Processing System
+Sub-Problem: Determine applicable TDS rates for vendor bills
+
+Top Matching Schema Components:
+----------------------------------------
+Match 1: (ID: enriched_exported_groq_data.csv_124) - Cosine Similarity: 0.7749 (Raw Distance: 0.4501)
+id: TDSAccBill_I_Value1_124\ndocument: Schema Name: TDSAccBill_I
+        Component Name: Value1
+        Component Type: MATH
+        Business Purpose: This row calculates the TDS (Tax Deducted at Source) on a bill by multiplying the base value with the TDS rate and dividing by 100.
+        Technical Logic: The component_expr 'AccBaseValue*TDSRate/100' is evaluated to calculate the TDS amount, where AccBaseValue is the base value and TDSRate is the TDS rate.\ncomponent_name: Value1\nschema_name: TDSAccBill_I\npurpose: This row calculates the TDS (Tax Deducted at Source) on a bill.\ntechnical_logic: The component evaluates the expression 'AccBaseValue*TDSRate/100' to calculate the TDS amount.
+----------------------------------------
+
+Match 2: (ID: exported_groq_data.csv_124) - Cosine Similarity: 0.7730 (Raw Distance: 0.4540)
+id: TDSAccBill_I_Value1_124\ndocument: Schema Name: TDSAccBill_I
+        Component Name: Value1
+        Component Type: MATH
+        Business Purpose: This row calculates the TDS (Tax Deducted at Source) on a bill by multiplying the base value with the TDS rate and dividing by 100.
+        Technical Logic: The component_expr 'AccBaseValue*TDSRate/100' is evaluated to calculate the TDS amount, where AccBaseValue is the base value and TDSRate is the TDS rate.\ncomponent_name: Value1\nschema_name: TDSAccBill_I
+----------------------------------------
+
+Match 3: (ID: schema_classes.csv_22) - Cosine Similarity: 0.7692 (Raw Distance: 0.4617)
+schema_name: TDSAccBill_I\nsource_schema: SC00002\nschema_group_name: Bill Process\ndata_source: Bill_I\ndate_aggregation_on: ForPrdFrom\nsettlement_type: Per SectionName Monthly\noutput_process_code: TT\ncomponent_count: 11\ncondition_count: 15\nhas_getgroupfromschema2: False\nnl_summary: Aggregates and allocates 11 components from Bill_I data source, settling Per SectionName Monthly and feeds 2 downstream classes. Performs arithmetic transformations across 15 field conditions.
+----------------------------------------

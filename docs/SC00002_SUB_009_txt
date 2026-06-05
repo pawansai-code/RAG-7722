@@ -1,0 +1,30 @@
+Sub-Problem ID: SC00002_SUB_009
+Statement:
+Project Name: Bill Processing System
+Sub-Problem: Settle bills across multiple dimensions including line of business and vendor
+
+Top Matching Schema Components:
+----------------------------------------
+Match 1: (ID: Bill_Item_N/A_5) - Cosine Similarity: 0.7919 (Raw Distance: 0.4161)
+Schema Name: Bill_Item
+        Component Name: N/A
+        Component Type: N/A
+        Business Purpose: This component processes individual bill items, aggregating and allocating data from a source system to support the overall billing process.
+        Technical Logic: The Bill_Item component processes 25 distinct data components sourced from 'Bill_I' (internal source SC00002). Data aggregation is performed based on 'ForPrdFrom' and settled 'Per Lineid Monthly'. It applies 31 field conditions for arithmetic transformations, outputting via process code 'TT' to downstream consumers.
+----------------------------------------
+
+Match 2: (ID: Bill_I_N/A_1) - Cosine Similarity: 0.7729 (Raw Distance: 0.4542)
+Schema Name: Bill_I
+        Component Name: N/A
+        Component Type: N/A
+        Business Purpose: This component is part of the 'Bill Process' group, designed to compute and process billing information, settling data on a 'Per Lineid Monthly' basis.
+        Technical Logic: The 'Bill_I' component aggregates data using 'ForPrdFrom', applies 31 conditions to compute 1 primary component, and settles output 'Per Lineid Monthly' with an output process code of 'TT'.
+----------------------------------------
+
+Match 3: (ID: BillCostAllocation_N/A_28) - Cosine Similarity: 0.7676 (Raw Distance: 0.4648)
+Schema Name: BillCostAllocation
+        Component Name: N/A
+        Component Type: N/A
+        Business Purpose: This component aggregates and allocates 7 components from the Bill_I data source, settling on a Per LOB Monthly basis.
+        Technical Logic: This component performs arithmetic transformations across 10 field conditions, aggregating data from the Bill_I data source and settling on a Per LOB Monthly basis.
+----------------------------------------

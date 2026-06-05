@@ -1,0 +1,30 @@
+Sub-Problem ID: SC00002_SUB_008
+Statement:
+Project Name: Bill Processing System
+Sub-Problem: Create accounting journal entries for bill payments and taxes
+
+Top Matching Schema Components:
+----------------------------------------
+Match 1: (ID: exported_groq_data.csv_156) - Cosine Similarity: 0.7729 (Raw Distance: 0.4542)
+id: BillCostAllocation_BillAmountinLocalCurrency_156\ndocument: Schema Name: BillCostAllocation
+        Component Name: BillAmountinLocalCurrency
+        Component Type: SUMFROMSCHEMA
+        Business Purpose: This row defines a component in the 'BillCostAllocation' schema that calculates the total cost of an accounting journal entry, specifically the 'BillAmountinLocalCurrency' component, which sums up the costs based on the 'COST' type.
+        Technical Logic: The component_expr field uses a JSON object to filter the data, selecting records where the 'documentnumber', 'AccountType', 'ForPrdFrom', 'ForPrdTo', 'linkref', 'CostAllocationMethod', and 'lineref' fields match the specified values. The SUMFROMSCHEMA component_type is then used to calculate the sum of the 'COST' type, resulting in the total cost of the accounting journal entry.\ncomponent_name: BillAmountinLocalCurrency\nschema_name: BillCostAllocation
+----------------------------------------
+
+Match 2: (ID: enriched_exported_groq_data.csv_156) - Cosine Similarity: 0.7727 (Raw Distance: 0.4546)
+id: BillCostAllocation_BillAmountinLocalCurrency_156\ndocument: Schema Name: BillCostAllocation
+        Component Name: BillAmountinLocalCurrency
+        Component Type: SUMFROMSCHEMA
+        Business Purpose: This row defines a component in the 'BillCostAllocation' schema that calculates the total cost of an accounting journal entry, specifically the 'BillAmountinLocalCurrency' component, which sums up the costs based on the 'COST' type.
+        Technical Logic: The component_expr field uses a JSON object to filter the data, selecting records where the 'documentnumber', 'AccountType', 'ForPrdFrom', 'ForPrdTo', 'linkref', 'CostAllocationMethod', and 'lineref' fields match the specified values. The SUMFROMSCHEMA component_type is then used to calculate the sum of the 'COST' type, resulting in the total cost of the accounting journal entry.\ncomponent_name: BillAmountinLocalCurrency\nschema_name: BillCostAllocation\npurpose: This component calculates the total cost of an accounting journal entry.\ntechnical_logic: It uses a JSON object to filter data based on specified fields and then calculates the sum of the 'COST' type using the SUMFROMSCHEMA component type.
+----------------------------------------
+
+Match 3: (ID: exported_groq_data.csv_177) - Cosine Similarity: 0.7641 (Raw Distance: 0.4718)
+id: PO&IPVsBill_BillRate_177\ndocument: Schema Name: PO&IPVsBill
+        Component Name: BillRate
+        Component Type: SUMFROMSCHEMA
+        Business Purpose: This row defines a component named 'BillRate' in the 'PO&IPVsBill' schema, which calculates the total cost of items in the 'Bill_Item' model.
+        Technical Logic: The component uses the 'SUMFROMSCHEMA' type to sum the 'COST' value from the schema, filtered by the document number, item ID, and link reference, as specified in the component expression.\ncomponent_name: BillRate\nschema_name: PO&IPVsBill
+----------------------------------------

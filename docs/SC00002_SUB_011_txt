@@ -1,0 +1,30 @@
+Sub-Problem ID: SC00002_SUB_011
+Statement:
+Project Name: Bill Processing System
+Sub-Problem: Reconcile bills with purchase orders and goods receipts to ensure accuracy
+
+Top Matching Schema Components:
+----------------------------------------
+Match 1: (ID: Bill_Item_N/A_5) - Cosine Similarity: 0.7873 (Raw Distance: 0.4254)
+Schema Name: Bill_Item
+        Component Name: N/A
+        Component Type: N/A
+        Business Purpose: This component processes individual bill items, aggregating and allocating data from a source system to support the overall billing process.
+        Technical Logic: The Bill_Item component processes 25 distinct data components sourced from 'Bill_I' (internal source SC00002). Data aggregation is performed based on 'ForPrdFrom' and settled 'Per Lineid Monthly'. It applies 31 field conditions for arithmetic transformations, outputting via process code 'TT' to downstream consumers.
+----------------------------------------
+
+Match 2: (ID: exported_groq_data.csv_205) - Cosine Similarity: 0.7570 (Raw Distance: 0.4860)
+id: PO&IPVsBill_Bill_205\ndocument: Schema Name: PO&IPVsBill
+        Component Name: Bill
+        Component Type: MATH
+        Business Purpose: This row represents a bill component in the PO&IPVsBill schema, used to calculate the total cost of a bill.
+        Technical Logic: The component_expr 'BillQty + BillRate + BillAddlCharge + BillDiscountAmt + BillTaxPercentage + BillBaseValue + BillTaxValue + BillDocumentValue' is evaluated to calculate the total cost, which is then used in the model with ID 'MATH' for 1 criteria.\ncomponent_name: Bill\nschema_name: PO&IPVsBill
+----------------------------------------
+
+Match 3: (ID: exported_groq_data.csv_177) - Cosine Similarity: 0.7568 (Raw Distance: 0.4863)
+id: PO&IPVsBill_BillRate_177\ndocument: Schema Name: PO&IPVsBill
+        Component Name: BillRate
+        Component Type: SUMFROMSCHEMA
+        Business Purpose: This row defines a component named 'BillRate' in the 'PO&IPVsBill' schema, which calculates the total cost of items in the 'Bill_Item' model.
+        Technical Logic: The component uses the 'SUMFROMSCHEMA' type to sum the 'COST' value from the schema, filtered by the document number, item ID, and link reference, as specified in the component expression.\ncomponent_name: BillRate\nschema_name: PO&IPVsBill
+----------------------------------------

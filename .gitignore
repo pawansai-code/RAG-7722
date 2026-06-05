@@ -1,0 +1,23 @@
+# Environments
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+
+# Database / Output files
+03_vectorization/chroma_gemini_db/
+03_vectorization/chroma_groq_db/
+01_sub_problem_generation/output/
+*_embeddings.json

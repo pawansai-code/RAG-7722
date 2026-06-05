@@ -1,0 +1,26 @@
+Sub-Problem ID: SC00002_SUB_006
+Statement:
+Project Name: Bill Processing System
+Sub-Problem: Allocate costs to specific cost centers based on purchase order details
+
+Top Matching Schema Components:
+----------------------------------------
+Match 1: (ID: Bill_Item_N/A_5) - Cosine Similarity: 0.7351 (Raw Distance: 0.5297)
+Schema Name: Bill_Item
+        Component Name: N/A
+        Component Type: N/A
+        Business Purpose: This component processes individual bill items, aggregating and allocating data from a source system to support the overall billing process.
+        Technical Logic: The Bill_Item component processes 25 distinct data components sourced from 'Bill_I' (internal source SC00002). Data aggregation is performed based on 'ForPrdFrom' and settled 'Per Lineid Monthly'. It applies 31 field conditions for arithmetic transformations, outputting via process code 'TT' to downstream consumers.
+----------------------------------------
+
+Match 2: (ID: exported_groq_data.csv_205) - Cosine Similarity: 0.7260 (Raw Distance: 0.5480)
+id: PO&IPVsBill_Bill_205\ndocument: Schema Name: PO&IPVsBill
+        Component Name: Bill
+        Component Type: MATH
+        Business Purpose: This row represents a bill component in the PO&IPVsBill schema, used to calculate the total cost of a bill.
+        Technical Logic: The component_expr 'BillQty + BillRate + BillAddlCharge + BillDiscountAmt + BillTaxPercentage + BillBaseValue + BillTaxValue + BillDocumentValue' is evaluated to calculate the total cost, which is then used in the model with ID 'MATH' for 1 criteria.\ncomponent_name: Bill\nschema_name: PO&IPVsBill
+----------------------------------------
+
+Match 3: (ID: schema_classes.csv_22) - Cosine Similarity: 0.7233 (Raw Distance: 0.5534)
+schema_name: TDSAccBill_I\nsource_schema: SC00002\nschema_group_name: Bill Process\ndata_source: Bill_I\ndate_aggregation_on: ForPrdFrom\nsettlement_type: Per SectionName Monthly\noutput_process_code: TT\ncomponent_count: 11\ncondition_count: 15\nhas_getgroupfromschema2: False\nnl_summary: Aggregates and allocates 11 components from Bill_I data source, settling Per SectionName Monthly and feeds 2 downstream classes. Performs arithmetic transformations across 15 field conditions.
+----------------------------------------
